@@ -60,10 +60,10 @@ public class MyFileWriter {
     }
     
     public static void createRegularFile() {
-        String data = "this has confidential information";
+        String data = "this has confidential info ";
         String regularFileName = "personal.txt";
-        
-         try {
+
+        try {
             Files.write(Paths.get(regularFileName), data.getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,18 +75,29 @@ public class MyFileWriter {
         // Path pathDestination = Paths.get(StringFinalLocation);
         // System.out.println("hiii " + pathDestination);
         try {
-        String finalLocation  = "\\.hiddenFolder\\personal.txt";
-        Path pathSource = Paths.get("").toAbsolutePath(); // to-do: add personal.txt end 
-        String pathSourceString = pathSource.toString();
-        String OriginalLocation = pathSourceString + "\\personal.txt";
-        String StringFinalLocation = pathSourceString + finalLocation;
-        Path FinalPathSource = Paths.get(OriginalLocation);
-        Path pathDestination = Paths.get(StringFinalLocation);
-        File source = new File(pathSource.toString());
-        System.out.println(source.exists());
-        System.out.println("hiii " + pathDestination);
-        Files.move(FinalPathSource, pathDestination, StandardCopyOption.REPLACE_EXISTING);
-       }catch (IOException e) {
+            String finalLocation = "\\.hiddenFolder\\personal.txt";
+            Path pathSource = Paths.get("").toAbsolutePath(); // to-do: add personal.txt end 
+            String pathSourceString = pathSource.toString();
+            String OriginalLocation = pathSourceString + "\\personal.txt";
+            String StringFinalLocation = pathSourceString + finalLocation;
+            Path FinalPathSource = Paths.get(OriginalLocation);
+            Path pathDestination = Paths.get(StringFinalLocation);
+            File source = new File(pathSource.toString());
+            System.out.println(source.exists());
+            System.out.println("hiii " + FinalPathSource);
+            Files.move(FinalPathSource, pathDestination, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void personalInfoWrite(){
+        String data = "My favorite ice cream flavor is mint chip, I like the color blue, my birthday is June ";
+        String regularFileName = "StuffAboutMe.txt";
+
+        try {
+            Files.write(Paths.get(regularFileName), data.getBytes(StandardCharsets.UTF_8));
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
