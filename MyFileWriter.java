@@ -93,7 +93,7 @@ public class MyFileWriter {
     
     public static void personalInfoWrite(){
         String data = "My favorite ice cream flavor is mint chip, I like the color blue, my birthday is June ";
-        String regularFileName = "StuffAboutMe.txt";
+        String regularFileName = "StuffAboutMe3.txt";
 
         try {
             Files.write(Paths.get(regularFileName), data.getBytes(StandardCharsets.UTF_8));
