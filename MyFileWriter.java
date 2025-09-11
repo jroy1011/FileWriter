@@ -92,7 +92,7 @@ public class MyFileWriter {
     }
     
     public static void personalInfoWrite(){
-        String data = "My favorite ice cream flavor is mint chip, I like the color blue, my birthday is June ";
+        String data = "My favorite ice cream flavor is not mint chip\nI don't like the color blue\n my birthday isn't June 21";
         String regularFileName = "StuffAboutMe.txt";
 
         try {
